@@ -28,7 +28,7 @@ public class Libro {
      * @param precio El precio del ejemplar
      * @param numeroEjemplar cantidad de ejemplares disponibles en la libreria
      */
-    public Libro(String titulo, String editorial, String autor, String tipo, String genero, float precio, int numeroEjemplar) {
+    public Libro(String titulo, String editorial, String autor, String tipo, String genero, float precio) {
         this.titulo = titulo;
         this.editorial = editorial;
         this.autor = autor;

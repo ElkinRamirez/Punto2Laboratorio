@@ -15,7 +15,6 @@ public class Libro {
     private String tipo;
     private String genero;
     private float precio;
-    private int numeroEjemplar;
 
     /**
      * La clase libro cuenta con los siguientes atributos quienes son las caracteristicas principales 
@@ -26,7 +25,6 @@ public class Libro {
      * @param tipo Si es de primera o segunda mano
      * @param genero A que genero pertenece. Ejemplo:ingenieria,medicina,literatura,entre otros
      * @param precio El precio del ejemplar
-     * @param numeroEjemplar cantidad de ejemplares disponibles en la libreria
      */
     public Libro(String titulo, String editorial, String autor, String tipo, String genero, float precio) {
         this.titulo = titulo;
@@ -35,7 +33,6 @@ public class Libro {
         this.tipo = tipo;
         this.genero = genero;
         this.precio = precio;
-        this.numeroEjemplar = numeroEjemplar;
     }
 
     /**
@@ -133,22 +130,4 @@ public class Libro {
     public void setPrecio(float precio) {
         this.precio = precio;
     }
-
-    /**
-     *Con este metodo es poible obtener el numero de ejemplares disponibles
-     * @return
-     */
-    public int getNumeroEjemplar() {
-        return numeroEjemplar;
-    }
-
-    /**
-     *Con este metodo es poible asignarle el numero de ejemplares disponibles
-     * @param numeroEjemplar
-     */
-    public void setNumeroEjemplar(int numeroEjemplar) {
-        this.numeroEjemplar = numeroEjemplar;
-    }
-    
- 
 }

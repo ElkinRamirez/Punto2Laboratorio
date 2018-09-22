@@ -16,7 +16,51 @@ public class LibreriaRuiz {
      * @param args
      */
     public static void main(String[] args) {
+        boolean cond = true;
+        while(cond == true){
+            int n;
+            System.out.println("Libreria Ruiz. Seleccione la acción que desea realizar.");
+            System.out.println("1. Añadir libro");
+            System.out.println("2. Mostrar inventario");
+            System.out.println("3. Filtrar por titulo");
+            System.out.println("4. Filtrar por autor");
+            System.out.println("5. Filtrar por editorial");
+            System.out.println("6. Filtrar por genero");
+            System.out.println("7. Filtrar por tipo");
+            n = lectura.nextInt();
+
+            switch(n){
+                case 1:
+                    crearLibro();
+                    break;
+                case 2:
+                    listarLibros();
+                    break;
+                case 3:
+                    filtrarLibroTitulo();
+                    break;
+                case 4:
+                    filtrarLibroAutor();
+                    break;
+                case 5:
+                    filtrarLibroEditorial();
+                    break;
+                case 6:
+                    filtrarLibroGenero();
+                    break;
+                case 7:
+                    filtrarLibroTipo();
+                    break;
+            }
+            
+            System.out.print("Desea realizar alguna otra accion?(si/no) ");
+            String respuesta = lectura.next();
+            
+            if(respuesta.equals("si")) cond = true;
+            else cond = false;
+        }
         
+        System.out.println("Gracias. Hasta luego");
     }
     /**
      * libros: ArrayList de los libros de la libreria
@@ -33,6 +77,7 @@ public class LibreriaRuiz {
          * Se ingresan los valores de los parametros del libro que se va a crear
          * y se añade un nuevo libro al ArrayList con los tales parametros
          */
+        System.out.println("Por favor ingrese los datos en minuscula y separados por (_). Ej: cien_anios_de_soledad");
         System.out.print("Titulo: ");
         String titulo = lectura.next();
         
@@ -64,7 +109,8 @@ public class LibreriaRuiz {
         if(respuesta.equals("si")){
             System.out.print("Escriba el numero del libro que desea comprar: ");
             int numero = lectura.nextInt();
-            libros.remove(numero);
+            libros.remove(numero-1);
+            System.out.println("Que lo disfrute.");
         }
     }
     /**
@@ -142,7 +188,7 @@ public class LibreriaRuiz {
             int indice;
             for(int i = 0; i < libros.size(); i++){
                 indice = i+1;
-                if(libros.get(i).getAutor().equals(titulo)){
+                if(libros.get(i).getTitulo().equals(titulo)){
                     System.out.println("Libro " + indice + ": ");
                     System.out.println(" ");
                     System.out.println("Titulo: " + libros.get(i).getTitulo());
@@ -176,7 +222,7 @@ public class LibreriaRuiz {
             int indice;
             for(int i = 0; i < libros.size(); i++){
                 indice = i+1;
-                if(libros.get(i).getAutor().equals(editorial)){
+                if(libros.get(i).getEditorial().equals(editorial)){
                     System.out.println("Libro " + indice + ": ");
                     System.out.println(" ");
                     System.out.println("Titulo: " + libros.get(i).getTitulo());
@@ -210,7 +256,7 @@ public class LibreriaRuiz {
             int indice;
             for(int i = 0; i < libros.size(); i++){
                 indice = i+1;
-                if(libros.get(i).getAutor().equals(tipo)){
+                if(libros.get(i).getTipo().equals(tipo)){
                     System.out.println("Libro " + indice + ": ");
                     System.out.println(" ");
                     System.out.println("Titulo: " + libros.get(i).getTitulo());
@@ -244,7 +290,7 @@ public class LibreriaRuiz {
             int indice;
             for(int i = 0; i < libros.size(); i++){
                 indice = i+1;
-                if(libros.get(i).getAutor().equals(genero)){
+                if(libros.get(i).getGenero().equals(genero)){
                     System.out.println("Libro " + indice + ": ");
                     System.out.println(" ");
                     System.out.println("Titulo: " + libros.get(i).getTitulo());
